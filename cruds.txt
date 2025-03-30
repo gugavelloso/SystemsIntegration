@@ -1,0 +1,36 @@
+# Criar um produto (PS1) - POST
+curl --location 'localhost:3000/product' \
+--header 'Content-Type: application/json' \
+--data '{
+    "nome_do_produto": "PlayStation 1",
+    "fornecedor": "Sony",
+    "endereco_fornecedor": "Avenida Sony, 123",
+    "quantidade": 100,
+    "descricao": "Console clássico com jogos como Final Fantasy VII"
+}'
+
+# Criar um produto (PS4) - POST
+curl --location 'localhost:3000/product' \
+--header 'Content-Type: application/json' \
+--data '{
+    "nome_do_produto": "PlayStation 4 Pro",
+    "fornecedor": "Sony",
+    "endereco_fornecedor": "Avenida Sony, 123",
+    "quantidade": 50,
+    "descricao": "Console com suporte a 4K e jogos como Spider-Man"
+}'
+
+# Listar todos os produtos - GET
+curl --location 'localhost:3000/product'
+
+# Atualizar um produto - PUT
+curl --location --request PUT 'localhost:3000/product/1' \
+--header 'Content-Type: application/json' \
+--data '{
+    "nome_do_produto": "PlayStation 3 Slim",
+    "quantidade": 30,
+    "descricao": "Versão Slim com jogos como The Last of Us"
+}'
+
+# Deletar um produto - DELETE
+curl --location --request DELETE 'localhost:3000/product/2'
